@@ -1,0 +1,137 @@
+<section class="page-hero text-white py-5">
+  <div class="container">
+    <h1 class="fw-bold">Hablemos</h1>
+    <p class="lead mb-0">
+      Cuéntanos qué necesitas y un miembro de nuestro equipo se pondrá en contacto contigo.
+    </p>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="container">
+    <div class="row g-5">
+
+      <!-- Formulario -->
+      <div class="col-12 col-lg-7">
+        <div class="alert alert-success" *ngIf="submitted">
+          <i class="bi bi-check-circle-fill me-2"></i>
+          ¡Gracias por escribirnos! Hemos recibido tu mensaje y te contactaremos pronto.
+        </div>
+
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+          <div class="mb-3">
+            <label for="fullName" class="form-label fw-semibold">Nombre completo</label>
+            <input
+              id="fullName"
+              type="text"
+              class="form-control"
+              formControlName="fullName"
+              [class.is-invalid]="f['fullName'].invalid && f['fullName'].touched"
+              placeholder="Escribe tu nombre">
+            <div class="invalid-feedback">
+              Por favor ingresa un nombre de al menos 3 caracteres.
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12 col-md-6 mb-3">
+              <label for="email" class="form-label fw-semibold">Correo electrónico</label>
+              <input
+                id="email"
+                type="email"
+                class="form-control"
+                formControlName="email"
+                [class.is-invalid]="f['email'].invalid && f['email'].touched"
+                placeholder="tucorreo@ejemplo.com">
+              <div class="invalid-feedback">
+                Ingresa un correo electrónico válido.
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6 mb-3">
+              <label for="phone" class="form-label fw-semibold">Teléfono (opcional)</label>
+              <input
+                id="phone"
+                type="tel"
+                class="form-control"
+                formControlName="phone"
+                placeholder="+57 300 000 0000">
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="interest" class="form-label fw-semibold">¿En qué estás interesado/a?</label>
+            <select
+              id="interest"
+              class="form-select"
+              formControlName="interest"
+              [class.is-invalid]="f['interest'].invalid && f['interest'].touched">
+              <option value="" disabled selected>Selecciona una opción</option>
+              <option *ngFor="let interest of interests" [value]="interest">{{ interest }}</option>
+            </select>
+            <div class="invalid-feedback">
+              Selecciona una opción de interés.
+            </div>
+          </div>
+
+          <div class="mb-4">
+            <label for="message" class="form-label fw-semibold">Mensaje</label>
+            <textarea
+              id="message"
+              class="form-control"
+              rows="4"
+              formControlName="message"
+              [class.is-invalid]="f['message'].invalid && f['message'].touched"
+              placeholder="Cuéntanos en qué podemos ayudarte"></textarea>
+            <div class="invalid-feedback">
+              El mensaje debe tener al menos 10 caracteres.
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg px-4">
+            <i class="bi bi-send-fill me-2"></i>Enviar mensaje
+          </button>
+        </form>
+      </div>
+
+      <!-- Información de contacto y redes -->
+      <div class="col-12 col-lg-5">
+        <div class="contact-info p-4 h-100">
+          <h4 class="fw-bold mb-4">Otros canales</h4>
+
+          <div class="d-flex align-items-start gap-3 mb-3">
+            <i class="bi bi-envelope-fill fs-4 text-primary"></i>
+            <div>
+              <p class="mb-0 fw-semibold">Correo</p>
+              <p class="text-muted mb-0">hola&#64;edumotion.co</p>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-start gap-3 mb-3">
+            <i class="bi bi-telephone-fill fs-4 text-primary"></i>
+            <div>
+              <p class="mb-0 fw-semibold">Teléfono</p>
+              <p class="text-muted mb-0">+57 300 000 0000</p>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-start gap-3 mb-4">
+            <i class="bi bi-geo-alt-fill fs-4 text-primary"></i>
+            <div>
+              <p class="mb-0 fw-semibold">Ubicación</p>
+              <p class="text-muted mb-0">Bogotá, Colombia (operación 100% digital)</p>
+            </div>
+          </div>
+
+          <h6 class="fw-semibold mb-3">Síguenos en redes</h6>
+          <div class="d-flex gap-3 fs-4">
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="text-primary" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener" class="text-primary" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener" class="text-primary" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

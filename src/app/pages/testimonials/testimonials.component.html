@@ -1,0 +1,18 @@
+<section class="page-hero text-white py-5">
+  <div class="container">
+    <h1 class="fw-bold">Testimonios de nuestros usuarios piloto</h1>
+    <p class="lead mb-0">
+      Conoce las experiencias de quienes ya han vivido el enfoque formativo de Edumotion.
+    </p>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-12 col-md-6 col-lg-4" *ngFor="let testimonial of testimonials">
+        <app-testimonial-card [testimonial]="testimonial"></app-testimonial-card>
+      </div>
+    </div>
+  </div>
+</section>

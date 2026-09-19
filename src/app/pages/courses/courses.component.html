@@ -1,0 +1,39 @@
+<section class="page-hero text-white py-5">
+  <div class="container">
+    <h1 class="fw-bold">Nuestros cursos y programas</h1>
+    <p class="lead mb-0">
+      Explora nuestra oferta formativa en habilidades digitales, tecnologías emergentes y emprendimiento.
+    </p>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="container">
+
+    <div class="d-flex flex-wrap gap-2 mb-4">
+      <button
+        *ngFor="let category of categories"
+        type="button"
+        class="btn btn-sm"
+        [ngClass]="selectedCategory === category ? 'btn-primary' : 'btn-outline-primary'"
+        (click)="filterByCategory(category)">
+        {{ category }}
+      </button>
+    </div>
+
+    <p class="text-muted">
+      Mostrando {{ filteredCourses.length }} de {{ allCourses.length }} cursos
+    </p>
+
+    <div class="row g-4">
+      <div class="col-12 col-md-6 col-lg-4" *ngFor="let course of filteredCourses">
+        <app-course-card [course]="course"></app-course-card>
+      </div>
+    </div>
+
+    <div class="text-center text-muted py-5" *ngIf="filteredCourses.length === 0">
+      <i class="bi bi-inboxes display-4 d-block mb-3"></i>
+      No hay cursos disponibles en esta categoría por el momento.
+    </div>
+  </div>
+</section>

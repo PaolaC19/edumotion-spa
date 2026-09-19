@@ -1,0 +1,21 @@
+<div class="card h-100 testimonial-card border-0 shadow-sm">
+  <div class="card-body d-flex flex-column">
+    <div class="mb-2">
+      <i *ngFor="let s of stars; let i = index"
+         class="bi"
+         [ngClass]="i < testimonial.rating ? 'bi-star-fill text-warning' : 'bi-star text-warning'">
+      </i>
+    </div>
+
+    <p class="card-text fst-italic flex-grow-1">"{{ testimonial.quote }}"</p>
+
+    <div class="d-flex align-items-center gap-3 mt-3">
+      <div class="avatar">{{ testimonial.avatarInitials }}</div>
+      <div>
+        <p class="mb-0 fw-semibold">{{ testimonial.name }}</p>
+        <p class="mb-0 small text-muted">{{ testimonial.role }}</p>
+        <p class="mb-0 small text-primary">{{ testimonial.course }}</p>
+      </div>
+    </div>
+  </div>
+</div>

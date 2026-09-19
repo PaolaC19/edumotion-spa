@@ -1,0 +1,118 @@
+<!-- Hero -->
+<section class="hero-section text-white">
+  <div class="container py-5">
+    <div class="row align-items-center gy-4">
+      <div class="col-12 col-lg-7">
+        <span class="badge bg-warning text-dark mb-3 px-3 py-2 rounded-pill">
+          <i class="bi bi-stars me-1"></i> Educación digital del futuro
+        </span>
+        <h1 class="display-5 fw-bold mb-3">
+          Impulsa tu futuro con formación digital flexible y de calidad
+        </h1>
+        <p class="lead mb-4 hero-subtext">
+          En Edumotion creemos que aprender habilidades digitales, tecnologías emergentes
+          y emprendimiento debe ser accesible, moderno y adaptado a tu ritmo de vida.
+        </p>
+        <div class="d-flex flex-wrap gap-3">
+          <a routerLink="/cursos" class="btn btn-warning btn-lg fw-semibold px-4">
+            Explorar cursos
+          </a>
+          <a routerLink="/contacto" class="btn btn-outline-light btn-lg px-4">
+            Hablar con nosotros
+          </a>
+        </div>
+      </div>
+      <div class="col-12 col-lg-5 text-center">
+        <i class="bi bi-mortarboard-fill hero-icon"></i>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Propuesta de valor -->
+<section class="py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">¿Por qué elegir Edumotion?</h2>
+      <p class="text-muted">Tres pilares que definen nuestra propuesta de valor</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-12 col-md-4">
+        <div class="value-card text-center p-4 h-100">
+          <i class="bi bi-arrow-repeat value-icon"></i>
+          <h5 class="fw-bold mt-3">Flexibilidad</h5>
+          <p class="text-muted">
+            Aprende a tu ritmo, desde cualquier lugar y en el horario que se ajuste a tu vida.
+          </p>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="value-card text-center p-4 h-100">
+          <i class="bi bi-emoji-smile value-icon"></i>
+          <h5 class="fw-bold mt-3">Experiencia de usuario</h5>
+          <p class="text-muted">
+            Una plataforma intuitiva, moderna y agradable, pensada para que tu aprendizaje fluya.
+          </p>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="value-card text-center p-4 h-100">
+          <i class="bi bi-gem value-icon"></i>
+          <h5 class="fw-bold mt-3">Calidad visual y de contenido</h5>
+          <p class="text-muted">
+            Cursos diseñados con rigor pedagógico y una identidad visual fresca y profesional.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Cursos destacados -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+      <div>
+        <h2 class="fw-bold mb-0">Cursos destacados</h2>
+        <p class="text-muted mb-0">Una muestra de nuestro catálogo formativo</p>
+      </div>
+      <a routerLink="/cursos" class="btn btn-primary">Ver todos los cursos</a>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-12 col-md-6 col-lg-4" *ngFor="let course of featuredCourses">
+        <app-course-card [course]="course"></app-course-card>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonios destacados -->
+<section class="py-5">
+  <div class="container">
+    <div class="text-center mb-4">
+      <h2 class="fw-bold">Lo que dicen nuestros usuarios piloto</h2>
+      <p class="text-muted">Historias reales de quienes ya confiaron en Edumotion</p>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+      <div class="col-12 col-md-6" *ngFor="let testimonial of featuredTestimonials">
+        <app-testimonial-card [testimonial]="testimonial"></app-testimonial-card>
+      </div>
+    </div>
+
+    <div class="text-center mt-4">
+      <a routerLink="/testimonios" class="btn btn-outline-primary">Ver todos los testimonios</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA final -->
+<section class="cta-section text-white text-center py-5">
+  <div class="container">
+    <h2 class="fw-bold mb-3">¿Listo para dar el siguiente paso?</h2>
+    <p class="lead mb-4">Contáctanos y descubre cómo Edumotion puede acompañarte en tu crecimiento profesional.</p>
+    <a routerLink="/contacto" class="btn btn-warning btn-lg fw-semibold px-4">Contáctanos ahora</a>
+  </div>
+</section>
